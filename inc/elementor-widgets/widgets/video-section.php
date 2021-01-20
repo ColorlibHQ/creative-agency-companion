@@ -1,0 +1,165 @@
+<?php
+namespace Creative_Agencyelementor\Widgets;
+
+use Elementor\Widget_Base;
+use Elementor\Controls_Manager;
+use Elementor\Scheme_Color;
+use Elementor\Utils;
+use Elementor\Scheme_Typography;
+use Elementor\Group_Control_Typography;
+use Elementor\Group_Control_Text_Shadow;
+
+
+
+// Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+
+/**
+ *
+ * Creative_Agency elementor video section section widget.
+ *
+ * @since 1.0
+ */
+class Creative_Agency_Video_Section extends Widget_Base {
+
+	public function get_name() {
+		return 'creativeagency-video-section';
+	}
+
+	public function get_title() {
+		return __( 'Video Section', 'creativeagency-companion' );
+	}
+
+	public function get_icon() {
+		return 'eicon-play-o';
+	}
+
+	public function get_categories() {
+		return [ 'creativeagency-elements' ];
+	}
+
+	protected function _register_controls() {
+
+        // ----------------------------------------  Video Section ------------------------------
+        $this->start_controls_section(
+            'video_section_content',
+            [
+                'label' => __( 'Video Section', 'creativeagency-companion' ),
+            ]
+        );
+        $this->add_control(
+            'video_thumb',
+            [
+                'label' => esc_html__( 'Section BG Image', 'creativeagency-companion' ),
+                'type' => Controls_Manager::MEDIA,
+                'label_block' => true,
+                'default'     => [
+                    'url'   => Utils::get_placeholder_image_src(),
+                ]
+            ]
+        );        
+        $this->add_control(
+            'video_url',
+            [
+                'label' => esc_html__( 'Popup Video URL', 'creativeagency-companion' ),
+                'type' => Controls_Manager::URL,
+                'label_block' => true,
+                'default' => [
+                    'url' => 'https://www.youtube.com/watch?v=E_-lMZDi7Uw'
+                ],
+            ]
+        );
+        
+        
+        $this->end_controls_section(); // End video_section
+
+        //------------------------------ Style title ------------------------------
+        
+        // Top Section Styles
+        $this->start_controls_section(
+            'left_sec_style', [
+                'label' => __( 'Top Section Styles', 'creativeagency-companion' ),
+                'tab' => Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+			'sec_title_col', [
+				'label' => __( 'Big Title Color', 'creativeagency-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .home_contact h2' => 'color: {{VALUE}};',
+				],
+			]
+        );
+
+        $this->add_control(
+			'sub_title_col', [
+				'label' => __( 'Sub title Color', 'creativeagency-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .home_contact p' => 'color: {{VALUE}};',
+				],
+			]
+        );
+
+        $this->add_control(
+			'btn_bg_col', [
+				'label' => __( 'Button BG Color', 'creativeagency-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .home_contact .btn_1' => 'background: {{VALUE}};',
+				],
+			]
+        );
+
+        $this->add_control(
+			'btn_hov_bg_col', [
+				'label' => __( 'Button Hover Bg Color', 'creativeagency-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .home_contact .btn_1:hover' => 'background-color: {{VALUE}};',
+				],
+			]
+        );
+        $this->add_control(
+			'bg_overlay_col', [
+				'label' => __( 'Bg Overlay Color', 'creativeagency-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .home_contact:after' => 'background: {{VALUE}};',
+				],
+			]
+        );
+        $this->end_controls_section();
+
+	}
+
+	protected function render() {
+    $settings       = $this->get_settings();
+    $video_thumb    = !empty( $settings['video_thumb']['url'] ) ?  $settings['video_thumb']['url'] : '';
+    $video_url      = !empty( $settings['video_url']['url'] ) ?  $settings['video_url']['url'] : '';
+    ?>
+     
+    <!-- video_area_start -->
+    <div class="video_area">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-xl-12">
+                    <div class="video_banner" <?php echo creativeagency_inline_bg_img( esc_url( $video_thumb ) ); ?>>
+                        <a class="popup-video" href="<?php echo esc_url( $video_url )?>">
+                            <i class="fa fa-play"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- video_area_end -->
+    <?php
+
+    }
+}
