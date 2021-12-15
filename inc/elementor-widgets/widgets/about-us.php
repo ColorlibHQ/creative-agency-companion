@@ -119,116 +119,42 @@ class Creative_Agency_About_Us extends Widget_Base {
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
-
         $this->add_control(
-            'left_sec_styles_seperator',
-            [
-                'label' => esc_html__( 'Left Section Styles', 'creativeagency-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-			'exp_val_col', [
-				'label' => __( 'Experience Value Color', 'creativeagency-companion' ),
+			'sec_col', [
+				'label' => __( 'Section Color', 'creativeagency-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .about_area .about_thumb .exprience h1' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .build_product .section_title h1' => 'color: {{VALUE}};',
 				],
 			]
         );
 
         $this->add_control(
-			'exp_txt_col', [
-				'label' => __( 'Experience Text Color', 'creativeagency-companion' ),
+			'txt_col', [
+				'label' => __( 'Text Color', 'creativeagency-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .about_area .about_thumb .exprience span' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .build_product .product_right p' => 'color: {{VALUE}};',
 				],
 			]
         );
-
         $this->add_control(
-            'right_sec_styles_seperator',
-            [
-                'label' => esc_html__( 'Right Section Styles', 'creativeagency-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
+			'anc_txt_col', [
+				'label' => __( 'Anchor Text Color', 'creativeagency-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .build_product .product_right .underline_text' => 'color: {{VALUE}};',
+				],
+			]
         );
         $this->add_control(
-            'sub_title_col', [
-                'label' => __( 'Sub Title Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_info .section_title .sub_heading' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'sec_title_col', [
-                'label' => __( 'Sec Title Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_info .section_title h3' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .about_info .section_title .seperator' => 'background: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'sec_text_col', [
-                'label' => __( 'Sec Text Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info p' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .about_area .about_info ul li' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'list_circle_col', [
-                'label' => __( 'List Item Circle Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info ul li::before' => 'background: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'btn_styles_seperator',
-            [
-                'label' => esc_html__( 'Button Styles', 'creativeagency-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-            'btn_txt_col', [
-                'label' => __( 'Button Text & Border Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info a' => 'color: {{VALUE}} !important; border-color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_control(
-            'btn_hvr_bg_col', [
-                'label' => __( 'Button Hover Bg & Border Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info a:hover' => 'background: {{VALUE}}; border-color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_control(
-            'btn_hvr_txt_col', [
-                'label' => __( 'Button Hover Text Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .about_area .about_info a:hover' => 'color: {{VALUE}} !important;',
-                ],
-            ]
+			'anc_txt_border_col', [
+				'label' => __( 'Anchor Text Border Color', 'creativeagency-companion' ),
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .build_product .product_right .underline_text:before' => 'background: {{VALUE}};',
+				],
+			]
         );
 
         $this->end_controls_section();

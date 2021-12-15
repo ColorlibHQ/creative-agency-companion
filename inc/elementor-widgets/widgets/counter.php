@@ -34,7 +34,7 @@ class Creative_Agency_Counters extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-settings';
+		return 'eicon-counter-circle';
 	}
 
 	public function get_categories() {
@@ -121,47 +121,47 @@ class Creative_Agency_Counters extends Widget_Base {
             ]
         );
         $this->add_control(
-            'sub_title_col', [
-                'label' => __( 'Sub Title Color', 'creativeagency-companion' ),
+            'shade_txt_col', [
+                'label' => __( 'Shade Text Color', 'creativeagency-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .section_title .sub_heading' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'big_title_col', [
-                'label' => __( 'Big Title Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .team_area .section_title h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .counter_area .opacity_text' => 'color: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'member_styles_seperator',
+            'indivisual_styles_seperator',
             [
-                'label' => esc_html__( 'Member Styles', 'creativeagency-companion' ),
+                'label' => esc_html__( 'Indivisual Item Styles', 'creativeagency-companion' ),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'after'
             ]
         );
         $this->add_control(
-            'member_name_col', [
-                'label' => __( 'Member Name Color', 'creativeagency-companion' ),
+            'first_count_val_col', [
+                'label' => __( 'First Counter Value Color', 'creativeagency-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .single_team h3' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .counter_area .single_counter h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'member_desig_color', [
-                'label' => __( 'Member Designation Color', 'creativeagency-companion' ),
+            'sec_count_val_col', [
+                'label' => __( 'Second Counter Value Color', 'creativeagency-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .team_area .single_team p' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .counter_area .single_counter h3.blue' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'third_count_val_col', [
+                'label' => __( 'Third Counter Value Color', 'creativeagency-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .counter_area .single_counter h3.orange' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -175,6 +175,7 @@ class Creative_Agency_Counters extends Widget_Base {
     $settings  = $this->get_settings();
     $sec_title = !empty( $settings['sec_title'] ) ? $settings['sec_title'] : '';
     $counters  = !empty( $settings['counters'] ) ? $settings['counters'] : '';
+    $classes  = ['counter', 'counter blue', 'counter orange'];
     ?>
     
     <!-- counter_area_start -->
@@ -188,6 +189,7 @@ class Creative_Agency_Counters extends Widget_Base {
             <div class="row">
                 <?php 
                 if( is_array( $counters ) && count( $counters ) > 0 ) {
+                    $i = 0;
                     foreach( $counters as $member ) {
                         $counter_title = ( !empty( $member['counter_title'] ) ) ? $member['counter_title'] : '';
                         $counter_value = ( !empty( $member['counter_value'] ) ) ? $member['counter_value'] : '';
@@ -196,11 +198,13 @@ class Creative_Agency_Counters extends Widget_Base {
                             <div class="single_counter text-center">
                                 <?php 
                                     if ( $counter_value ) { 
-                                        echo '<h3 class="counter">'.esc_html( $counter_value).'</h3>';
+                                        echo '<h3 class="'.esc_attr($classes[$i]).'">'.esc_html( $counter_value).'</h3>';
                                     }
                                     if ( $counter_title ) { 
                                         echo '<span>'.esc_html( $counter_title ).'</span>';
                                     }
+                                    
+                                    $i++;
                                 ?>
                             </div>
                         </div>

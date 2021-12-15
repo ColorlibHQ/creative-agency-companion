@@ -78,59 +78,20 @@ class Creative_Agency_Video_Section extends Widget_Base {
 
         //------------------------------ Style title ------------------------------
         
-        // Top Section Styles
+        // Video Section Styles
         $this->start_controls_section(
-            'left_sec_style', [
-                'label' => __( 'Top Section Styles', 'creativeagency-companion' ),
+            'vid_sec_style', [
+                'label' => __( 'Video Section Styles', 'creativeagency-companion' ),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
 
         $this->add_control(
-			'sec_title_col', [
-				'label' => __( 'Big Title Color', 'creativeagency-companion' ),
+			'cir_bg_col', [
+				'label' => __( 'Play Circle Bg Color', 'creativeagency-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .home_contact h2' => 'color: {{VALUE}};',
-				],
-			]
-        );
-
-        $this->add_control(
-			'sub_title_col', [
-				'label' => __( 'Sub title Color', 'creativeagency-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .home_contact p' => 'color: {{VALUE}};',
-				],
-			]
-        );
-
-        $this->add_control(
-			'btn_bg_col', [
-				'label' => __( 'Button BG Color', 'creativeagency-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .home_contact .btn_1' => 'background: {{VALUE}};',
-				],
-			]
-        );
-
-        $this->add_control(
-			'btn_hov_bg_col', [
-				'label' => __( 'Button Hover Bg Color', 'creativeagency-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .home_contact .btn_1:hover' => 'background-color: {{VALUE}};',
-				],
-			]
-        );
-        $this->add_control(
-			'bg_overlay_col', [
-				'label' => __( 'Bg Overlay Color', 'creativeagency-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .home_contact:after' => 'background: {{VALUE}};',
+					'{{WRAPPER}} .video_area .video_banner a' => 'background: {{VALUE}};',
 				],
 			]
         );

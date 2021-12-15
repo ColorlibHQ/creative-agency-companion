@@ -135,66 +135,6 @@ class Creative_Agency_Services extends Widget_Base {
 		);
 		$this->end_controls_section(); // End service content
 
-    /**
-     * Style Tab
-     * ------------------------------ Style Section Heading ------------------------------
-     *
-     */
-
-        $this->start_controls_section(
-            'style_room_section', [
-                'label' => __( 'Style Service Section', 'creativeagency-companion' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-            ]
-        );
-        $this->add_control(
-            'sub_title_col', [
-                'label' => __( 'Sub Title Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .dream_service .section_title .sub_heading' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'big_title_col', [
-                'label' => __( 'Big Title Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .dream_service .section_title h3' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'singl_item_styles_seperator',
-            [
-                'label' => esc_html__( 'Single Item Styles', 'creativeagency-companion' ),
-                'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
-            ]
-        );
-        $this->add_control(
-            'sing_ser_title_col', [
-                'label' => __( 'Title Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .dream_service .single_dream h3' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'sing_ser_txt_col', [
-                'label' => __( 'Text Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .dream_service .single_dream p' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
 	}
 
 	protected function render() {

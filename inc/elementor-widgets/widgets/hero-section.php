@@ -55,7 +55,7 @@ class Creative_Agency_Hero extends Widget_Base {
             'sec_title',
             [
                 'label' => esc_html__( 'Sec Title', 'creativeagency-companion' ),
-                'type' => Controls_Manager::TEXT,
+                'type' => Controls_Manager::TEXTAREA,
                 'label_block' => true,
                 'default'   => 'We are <span>Design and Development</span> <br>Agency based on California',
             ]
@@ -130,46 +130,28 @@ class Creative_Agency_Hero extends Widget_Base {
 				'label' => __( 'Big Title Color', 'creativeagency-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text h3' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .agency_heading .agency_text h3' => 'color: {{VALUE}};',
 				],
 			]
 		);
 		$this->add_control(
-			'sub_title_col', [
-				'label' => __( 'Sub Title Color', 'creativeagency-companion' ),
+			'anchor_txt_col', [
+				'label' => __( 'Anchor Text Color', 'creativeagency-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text p' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .agency_heading .agency_text .underline_text' => 'color: {{VALUE}};',
 				],
 			]
         );
 		$this->add_control(
-			'btn_border-text_col', [
-				'label' => __( 'Button Border & Text Color', 'creativeagency-companion' ),
+			'anchor_border_col', [
+				'label' => __( 'Anchor Border Color', 'creativeagency-companion' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn2' => 'color: {{VALUE}};border-color: {{VALUE}};',
+					'{{WRAPPER}} .agency_heading .agency_text .underline_text:before' => 'background: {{VALUE}};',
 				],
 			]
-		);
-		$this->add_control(
-			'btn_bg_hov_col', [
-				'label' => __( 'Button Hover Bg & Border Color', 'creativeagency-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn2:hover' => 'background: {{VALUE}};border-color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'btn_bg_hov_txt_col', [
-				'label' => __( 'Button Hover Text Color', 'creativeagency-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .slider_area .single_slider .slider_text .boxed-btn2:hover' => 'color: {{VALUE}} !important;',
-				],
-			]
-		);
+        );
 
 		$this->end_controls_section();
 	}

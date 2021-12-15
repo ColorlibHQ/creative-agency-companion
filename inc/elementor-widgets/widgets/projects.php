@@ -34,7 +34,7 @@ class Creative_Agency_Projects extends Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-settings';
+		return 'eicon-gallery-grid';
 	}
 
 	public function get_categories() {
@@ -97,136 +97,72 @@ class Creative_Agency_Projects extends Widget_Base {
      */
 
         $this->start_controls_section(
-            'style_room_section', [
-                'label' => __( 'Style Service Section', 'creativeagency-companion' ),
+            'style_projects_section', [
+                'label' => __( 'Style Projects Section', 'creativeagency-companion' ),
                 'tab' => Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'style_type' => 'style_1'
-                ],
-            ]
-        );
-        $this->add_control(
-            'sub_title_col', [
-                'label' => __( 'Sub Title Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .lastest_project .section_title .sub_heading' => 'color: {{VALUE}};',
-                ],
             ]
         );
         $this->add_control(
             'sec_title_col', [
-                'label' => __( 'Section Title Color', 'creativeagency-companion' ),
+                'label' => __( 'Sec Title Color', 'creativeagency-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .lastest_project .section_title h3' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .lastest_project .section_title .seperator' => 'background: {{VALUE}};',
+                    '{{WRAPPER}} .works_area .section_title h3' => 'color: {{VALUE}};',
                 ],
             ]
         );
-
         $this->add_control(
-            'singl_item_styles_seperator',
-            [
-                'label' => esc_html__( 'Single Project Styles', 'creativeagency-companion' ),
+            'shade_title_col', [
+                'label' => __( 'Shade Title Color', 'creativeagency-companion' ),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .works_area .opacity_text' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_control(
+            'project_styles_separator', [
+                'label' => __( 'Projects Style', 'creativeagency-companion' ),
                 'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
+                'separator' => 'after',
             ]
         );
         $this->add_control(
-            'proj_loc_col', [
-                'label' => __( 'Project Location Color', 'creativeagency-companion' ),
+            'border_col', [
+                'label' => __( 'Border Color', 'creativeagency-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .lastest_project .section_title .sub_heading2' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .works_area .single_work .work_heading h3::before' => 'background: {{VALUE}};',
                 ],
             ]
         );
         $this->add_control(
-            'proj_title_col', [
-                'label' => __( 'Project Title Color', 'creativeagency-companion' ),
+            'proj_btn_col', [
+                'label' => __( 'Button Color', 'creativeagency-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .lastest_project .section_title h4' => 'color: {{VALUE}};',
-                ],
-            ]
-        );
-        $this->add_control(
-            'proj_txt_col', [
-                'label' => __( 'Project Text Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .lastest_project .section_title p' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .works_area .single_work .work_thumb .work_hover .work_inner a:hover' => 'background: {{VALUE}};',
                 ],
             ]
         );
 
         $this->add_control(
-            'singl_item_btn_styles_seperator',
-            [
-                'label' => esc_html__( 'Button Styles', 'creativeagency-companion' ),
+            'btn_styles_separator', [
+                'label' => __( 'Button Style', 'creativeagency-companion' ),
                 'type' => Controls_Manager::HEADING,
-                'separator' => 'after'
+                'separator' => 'after',
             ]
         );
         $this->add_control(
-            'btn_line_txt_col', [
-                'label' => __( 'Button Border & Text Color', 'creativeagency-companion' ),
+            'more_btn_col', [
+                'label' => __( 'Button Color', 'creativeagency-companion' ),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .lastest_project .section_title .boxed-btn' => 'color: {{VALUE}} !important; border-color: {{VALUE}}',
+                    '{{WRAPPER}} .works_area .more_products .boxed_btn_round' => 'color: {{VALUE}}; border-color: {{VALUE}};',
+                    '{{WRAPPER}} .works_area .more_products .boxed_btn_round:hover' => 'background: {{VALUE}}; color: #fff !important',
                 ],
             ]
         );
-        $this->add_control(
-            'btn_hvr_bg_col', [
-                'label' => __( 'Button Hover Bg & Border Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .lastest_project .section_title .boxed-btn:hover' => 'background: {{VALUE}}; border-color: {{VALUE}}',
-                ],
-            ]
-        );
-        $this->add_control(
-            'btn_hvr_txt_col', [
-                'label' => __( 'Button Hover Text Color', 'creativeagency-companion' ),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .lastest_project .section_title .boxed-btn:hover' => 'color: {{VALUE}} !important;',
-                ],
-            ]
-        );
-
-        $this->end_controls_section();
-
-		//------------------------------ Services Item Style ------------------------------
-		$this->start_controls_section(
-			'style_serv_items_sec', [
-				'label' => __( 'Style Single Item', 'creativeagency-companion' ),
-                'tab' => Controls_Manager::TAB_STYLE,
-                'condition' => [
-                    'style_type' => 'style_2'
-                ],
-			]
-		);
-		$this->add_control(
-			'big_titles_color', [
-				'label' => __( 'Big Titles Color', 'creativeagency-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .project_details .project_details_left .single_details h3, .project_details .projects_details_info .details_info h3' => 'color: {{VALUE}};',
-				],
-			]
-		);
-		$this->add_control(
-			'texts_color', [
-				'label' => __( 'Text Color', 'creativeagency-companion' ),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .project_details .project_details_left .single_details p' => 'color: {{VALUE}};',
-				],
-			]
-		);
 		$this->end_controls_section();
 
     }
