@@ -40,8 +40,7 @@ function creativeagency_section_heading( $title = '', $subtitle = '' ) {
 add_action( 'wp_enqueue_scripts', 'creativeagency_companion_frontend_scripts', 99 );
 function creativeagency_companion_frontend_scripts() {
 
-	wp_enqueue_script( 'creativeagency-companion-script', plugins_url( '../js/loadmore-ajax.js', __FILE__ ), array( 'jquery' ), '1.0', true );
-	wp_enqueue_script( 'creativeagency-common-js', plugins_url( '../js/common.js', __FILE__ ), array( 'jquery' ), '1.0-s1', true );
+	wp_enqueue_script( 'creativeagency-companion-script', plugins_url( '../js/loadmore-ajax.js', __FILE__ ), array( 'masonry', 'creativeagency-ui-js' ), '1.0-s2', true );
 
 }
 // 

@@ -319,7 +319,7 @@ if ( !class_exists( 'Creative_Agency_El_Widgets' ) ) {
             // map active js
             // wp_register_script( 'creativeagency-map-active', plugins_url( 'assets/js/map-active.js', __FILE__ ), array('jquery'), '1.0', true );
             // creativeagency companion main js
-            wp_enqueue_script( 'creativeagency-companion', plugins_url( 'assets/js/creativeagency-companion-main.js', __FILE__ ), array('jquery'), '1.0-s1', true );
+            wp_enqueue_script( 'creativeagency-companion', plugins_url( 'assets/js/creativeagency-companion-main.js', __FILE__ ), array( 'masonry', 'creativeagency-ui-js' ), '1.0-s2', true );
 
 
         }
