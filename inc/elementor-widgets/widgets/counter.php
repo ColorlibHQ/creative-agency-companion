@@ -223,13 +223,16 @@ class Creative_Agency_Counters extends Widget_Base {
         if( \Elementor\Plugin::$instance->editor->is_edit_mode() === true  ) {
         ?>
         <script>
-        ( function( $ ){
-            // counter 
-            $('.counter').counterUp({
-                delay: 10,
-                time: 10000
-            });
-        })(jQuery);
+        (function () {
+            function run() {
+                window.ColorlibUI && window.ColorlibUI.counter('.counter', { time: 10000 });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', run);
+            } else {
+                run();
+            }
+        })();
         </script>
         <?php 
         }

@@ -82,17 +82,17 @@ class Creative_Agency_Contact extends Widget_Base {
                     [
                         'label' => esc_html__( 'Buttonwood, California.', 'creativeagency-companion' ),
                         'desc'  => esc_html__( 'Rosemead, CA 91770', 'creativeagency-companion' ),
-                        'icon'  => 'fa fa-home',
+                        'icon'  => 'fa-solid fa-home',
                     ],
                     [
                         'label' => esc_html__( '00 (440) 9865 562', 'creativeagency-companion' ),
                         'desc'  => esc_html__( 'Mon to Fri 9am to 6pm', 'creativeagency-companion' ),
-                        'icon'  => 'fa fa-tablet',
+                        'icon'  => 'fa-solid fa-tablet',
                     ],
                     [
                         'label' => esc_html__( 'support@colorlib.com', 'creativeagency-companion' ),
                         'desc'  => esc_html__( 'Send us your query anytime!', 'creativeagency-companion' ),
-                        'icon'  => 'fa fa-envelope-o',
+                        'icon'  => 'fa-regular fa-envelope',
                     ],                    
                 ]
             ]

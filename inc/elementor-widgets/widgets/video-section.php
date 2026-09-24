@@ -112,7 +112,7 @@ class Creative_Agency_Video_Section extends Widget_Base {
                 <div class="col-xl-12">
                     <div class="video_banner" <?php echo creativeagency_inline_bg_img( esc_url( $video_thumb ) ); ?>>
                         <a class="popup-video" href="<?php echo esc_url( $video_url )?>">
-                            <i class="fa fa-play"></i>
+                            <i class="fa-solid fa-play"></i>
                         </a>
                     </div>
                 </div>

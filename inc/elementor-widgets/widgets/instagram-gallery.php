@@ -179,7 +179,7 @@ class Creative_Agency_Instagram_Gallery extends Widget_Base {
                                 echo '
                                 <div class="ovrelay">
                                     <a href="'.esc_url($target_url).'">
-                                        <i class="fa fa-instagram"></i>
+                                        <i class="fa-brands fa-instagram"></i>
                                     </a>
                                 </div>
                                 ';

@@ -278,9 +278,9 @@ class Creative_Agency_Team_Members extends Widget_Base {
                                 <div class="thumb" <?php echo creativeagency_inline_bg_img( esc_url( $member_img ) ); ?>>
                                     <div class="author_links">
                                         <ul>
-                                            <li><a href="<?php echo esc_url( $fb_url )?>"><i class="fa fa-facebook"></i></a></li>
-                                            <li><a href="<?php echo esc_url( $tw_url )?>"><i class="fa fa-twitter"></i></a></li>
-                                            <li><a href="<?php echo esc_url( $ins_url )?>"><i class="fa fa-instagram"></i></a></li>
+                                            <li><a href="<?php echo esc_url( $fb_url )?>"><i class="fa-brands fa-facebook"></i></a></li>
+                                            <li><a href="<?php echo esc_url( $tw_url )?>"><i class="fa-brands fa-twitter"></i></a></li>
+                                            <li><a href="<?php echo esc_url( $ins_url )?>"><i class="fa-brands fa-instagram"></i></a></li>
                                         </ul>
                                     </div>
                                 </div>
